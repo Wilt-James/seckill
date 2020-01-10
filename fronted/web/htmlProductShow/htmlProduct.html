@@ -1032,6 +1032,7 @@
         }
         //3.绑定请求服务器地址
         xmlHttp.open("GET","http://localhost:8083/check?productID="+productID,true);
+        xmlHttp.withCredentials=true
         //4.发送请求
         xmlHttp.send();
     }

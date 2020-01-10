@@ -36,6 +36,7 @@ func GetOneProduct() bool {
 
 //成功让库存数量减一后在返回true消息
 func GetProduct(rw http.ResponseWriter, req *http.Request) {
+	defer fmt.Println("done")
 	if GetOneProduct() {
 		rw.Write([]byte("true"))
 		return

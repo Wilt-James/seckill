@@ -1,6 +1,8 @@
 package common
 
-import "net/http"
+import (
+	"net/http"
+)
 
 //声明一个新的数据类型（函数类型）
 type FilterHandle func(rw http.ResponseWriter, req *http.Request) error

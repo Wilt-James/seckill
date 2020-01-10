@@ -13,9 +13,23 @@ import (
 	"seckill/services"
 )
 
+// Cors
+func Cors(ctx iris.Context) {
+	ctx.Header("Access-Control-Allow-Origin", "*")
+	if ctx.Request().Method == "OPTIONS" {
+		ctx.Header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,PATCH,OPTIONS")
+		ctx.Header("Access-Control-Allow-Headers", "Content-Type, Accept, Authorization")
+		ctx.Header("Access-Control-Allow-Credentials","true")
+		ctx.StatusCode(204)
+		return
+	}
+	ctx.Next()
+}
+
 func main() {
 	//1. 创建iris实例
 	app := iris.New()
+	app.Use(Cors)
 	//2. 设置错误模式，在mvc模式下提示错误
 	app.Logger().SetLevel("debug")
 	//3. 注册模板

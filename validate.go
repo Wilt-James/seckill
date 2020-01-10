@@ -218,6 +218,7 @@ func Check(rw http.ResponseWriter, r *http.Request) {
 	productString := queryForm["productID"][0]
 	fmt.Println(productString)
 	//获取用户cookie
+
 	userCookie, err := r.Cookie("uid")
 	if err != nil {
 		rw.Write([]byte("false"))
