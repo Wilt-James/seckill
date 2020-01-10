@@ -7,3 +7,4 @@
 - 运行分布式权限验证文件validate.go
 - 运行数量控制接口文件getOne.go
 - 运行异步下单数据库消费文件consumer.go
+- 对于用户界面访问localhost:8082/html/htmlProduct.html
